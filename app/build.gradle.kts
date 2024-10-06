@@ -49,6 +49,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.retrofit)
@@ -61,11 +62,12 @@ dependencies {
     implementation(libs.androidx.camera.view)
     implementation(libs.room.runtime)
     implementation(libs.hilt)
-    kapt(libs.hiltCompiler)
-    kapt(libs.room.compiler)
+    kapt(libs.hiltCompiler) // Hilt compiler burada
+    kapt(libs.room.compiler) // Room compiler burada
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
     implementation(libs.coroutines)
     implementation(libs.androidx.core.ktx)

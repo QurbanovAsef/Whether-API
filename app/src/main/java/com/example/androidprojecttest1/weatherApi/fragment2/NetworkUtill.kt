@@ -7,7 +7,7 @@ import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import retrofit2.Response
 
- suspend fun <T> apiCall(call: () -> Response<T>): ApiResult<T> {
+ suspend fun <T> apiCall(call: suspend () -> Response<T>): ApiResult<T> {
      val result = withContext(Dispatchers.IO){
          call.invoke()
      }
@@ -26,7 +26,7 @@ import retrofit2.Response
              ErrorModel(
                  errorCode = 505,
                  errorTittle = "API Error",
-                 errorDescription = "Sistem xetasi",
+                 errorDescription = e.message,
                  errorAction = "Retry"
              )
          )
