@@ -9,20 +9,22 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
 
     @Provides
+    @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        val level = HttpLoggingInterceptor.Level.BODY
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = level
-        return interceptor
+        return HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
     }
 
     @Provides
+    @Singleton
     fun provideOkHttpClient(
         weatherApiKeyInterceptor: WeatherApiKeyInterceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
@@ -34,11 +36,13 @@ object RetrofitModule {
     }
 
     @Provides
+    @Singleton
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
 
     @Provides
+    @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
@@ -49,5 +53,4 @@ object RetrofitModule {
             .client(okHttpClient)
             .build()
     }
-
 }

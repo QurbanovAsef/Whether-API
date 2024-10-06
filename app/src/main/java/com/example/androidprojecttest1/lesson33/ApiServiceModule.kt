@@ -1,3 +1,5 @@
+package com.example.androidprojecttest1.lesson33
+
 import com.example.androidprojecttest1.weatherApi.WeatherApiService
 import dagger.Module
 import dagger.Provides
@@ -15,5 +17,4 @@ object ApiServiceModule {
     fun provideWeatherApiService(retrofit: Retrofit): WeatherApiService {
         return retrofit.create(WeatherApiService::class.java)
     }
-
 }

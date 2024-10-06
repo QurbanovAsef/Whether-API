@@ -10,6 +10,8 @@ import com.example.androidprojecttest1.lesson25.ClassEntity
 class MyFirstViewModel : ViewModel() {
     private var database: AppDatabase? = null
 
+
+
     fun saveStudent(name: String, surname: String) {
         val student = ClassEntity(name = name, surname = surname)
         database?.getStudentDAO()?.addStudentInfo(student)

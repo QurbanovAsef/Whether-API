@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class WeatherFragment : Fragment() {
 
     private lateinit var binding: FragmentWeatherBinding
-
     private val viewModel by viewModels<WeatherViewModel>()
 
     override fun onCreateView(
@@ -25,6 +24,7 @@ class WeatherFragment : Fragment() {
         binding = FragmentWeatherBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchWeatherData(cityName = "Baku")
@@ -35,12 +35,10 @@ class WeatherFragment : Fragment() {
             binding.swipeRefreshLayout.isRefreshing = false
             when (state) {
                 is ApiState.Loading -> {
-                    binding.progressBar.visibility =
-                        View.VISIBLE
+                    binding.progressBar.visibility = View.VISIBLE
                 }
                 is ApiState.Success -> {
-                    binding.progressBar.visibility =
-                        View.GONE
+                    binding.progressBar.visibility = View.GONE
                     state.data?.let {
                         binding.cityName.text = it.location?.name
                         binding.currentTemperature.text = "${it.current?.temp_c}°C"
@@ -63,6 +61,5 @@ class WeatherFragment : Fragment() {
                 }
             }
         })
-
     }
 }
