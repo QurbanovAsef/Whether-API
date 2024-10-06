@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".lesson28_2.CreatePostFragment">
+
+    <TextView
+        android:id="@+id/createPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/Create_post"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/inputTitle"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:maxLines="1"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/inputBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/description"
+        android:minLines="4"
+        android:lines="4"
+        android:maxLines="6"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/CreatePostButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Create_post"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="bottom"
+        />
+
+</LinearLayout>

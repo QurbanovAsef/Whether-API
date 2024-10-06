@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggle_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:checkedButton="@+id/woman"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:insetRight="5dp"
+            android:text="@string/none"
+            android:textColor="@color/black"
+            app:backgroundTint="@drawable/first_selector"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/men"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:insetRight="5dp"
+            android:text="@string/man"
+            android:textColor="@color/black"
+            app:backgroundTint="@drawable/first_selector"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/woman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/woman"
+            android:textColor="@color/black"
+            app:backgroundTint="@drawable/first_selector"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:padding="16dp"
+        android:text="@string/power_on"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toggle_group"
+        app:thumbIcon="@drawable/true_false"
+        app:thumbIconSize="20dp"
+        app:thumbIconTint="@color/blue1"
+        app:thumbTint="@color/white"
+        app:trackTint="@color/blue">
+
+    </com.google.android.material.materialswitch.MaterialSwitch>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:padding="16dp"
+        android:text="@string/power_of"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_1">
+
+    </com.google.android.material.materialswitch.MaterialSwitch>
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:stepSize="10"
+        android:value="50"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:haloColor="@color/blue1"
+        app:haloRadius="30dp"
+        app:labelBehavior="withinBounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_2"
+        app:thumbColor="@color/blue1"
+        app:thumbElevation="5dp"
+        app:thumbRadius="10dp"
+        app:thumbStrokeColor="@color/blue"
+        app:thumbStrokeWidth="1dp"
+        app:tickColor="@color/blue1"
+        app:tickColorActive="@color/green"
+        app:tickRadiusActive="1dp"
+        app:tickVisible="true"
+        app:trackColorActive="@color/blue1"
+        app:trackHeight="8dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:padding="16dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/blue1"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white_1"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/ChipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checkable="true"
+            android:checked="false"
+            android:clickable="false"
+            android:text="@string/none"
+            app:chipStrokeWidth="0dp"
+            android:backgroundTint="@color/blue1"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="false"
+            android:text="@string/man"
+            android:textColor="@color/blue"
+            app:closeIcon="@drawable/true_false"
+            app:closeIconEnabled="true" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="false"
+            android:text="@string/woman"
+            android:textColor="@color/blue"
+            app:closeIcon="@drawable/true_false"
+            app:closeIconEnabled="true" />
+    </com.google.android.material.chip.ChipGroup>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/cardview"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:orientation="horizontal">
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/myCheckBox"
+        app:buttonTint="@color/blue1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/click"
+        android:textSize="20sp"
+        >
+
+    </com.google.android.material.checkbox.MaterialCheckBox>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/tittle"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        >
+
+    </com.google.android.material.textview.MaterialTextView>
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

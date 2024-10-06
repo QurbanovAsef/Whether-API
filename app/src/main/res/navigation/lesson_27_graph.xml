@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lesson_27_graph"
+    app:startDestination="@id/weatherFragment">
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.androidprojecttest1.weatherApi.WeatherFragment"
+        android:label="WeatherFragment" />
+    <fragment
+        android:id="@+id/lesson32Fragment"
+        android:name="com.example.androidprojecttest1.lesson32.Lesson32Fragment"
+        android:label="fragment_lesson32"
+        tools:layout="@layout/fragment_lesson32" />
+</navigation>

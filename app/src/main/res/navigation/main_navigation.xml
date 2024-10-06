@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/createNewPasswordFragment"
+        android:name="com.example.androidprojecttest1.lesson23.CreateNewPasswordFragment"
+        android:label="fragment_create_new_password"
+        tools:layout="@layout/fragment_create_new_password" >
+        <action
+            android:id="@+id/action_createNewPasswordFragment_to_mainInformationFragment"
+            app:destination="@id/mainInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailVerification"
+        android:name="com.example.androidprojecttest1.lesson23.EmailVerification"
+        android:label="fragment_email_verification"
+        tools:layout="@layout/fragment_email_verification" >
+        <action
+            android:id="@+id/action_emailVerification_to_createNewPasswordFragment"
+            app:destination="@id/createNewPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainInformationFragment"
+        android:name="com.example.androidprojecttest1.lesson23.MainInformationFragment"
+        android:label="fragment_main_information"
+        tools:layout="@layout/fragment_main_information" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.androidprojecttest1.lesson23.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_emailVerification"
+            app:destination="@id/emailVerification" />
+    </fragment>
+</navigation>
